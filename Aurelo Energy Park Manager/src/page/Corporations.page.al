@@ -1,3 +1,6 @@
+/// <summary>
+/// Lists all corporations.
+/// </summary>
 page 55001 "Corporations"
 {
     ApplicationArea = All;
