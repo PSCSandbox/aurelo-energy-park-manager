@@ -2,6 +2,7 @@
 *.flf
 *.bclicense
 *.g.xlf
+*launch.json
 .DS_Store
 Thumbs.db
 TestResults*.xml
