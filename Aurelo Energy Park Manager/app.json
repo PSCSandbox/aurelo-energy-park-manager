@@ -24,7 +24,10 @@
   "features": ["NoImplicitWith"],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "source": {
+    "repositoryUrl": "https://github.com/PSCSandbox/aurelo-energy-park-manager"
   }
 }

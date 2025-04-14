@@ -1,3 +1,7 @@
+/// <summary>
+/// The Corporation table is replacing the generation of a new company.
+/// If you use the Corporations feature it is noct possible to use some the financial functionality in Business Central.
+/// </summary>
 table 55000 "Corporation"
 {
     Caption = 'Corporation';
