@@ -2,27 +2,26 @@
   "id": "b8e50e4a-9015-469a-9a32-e8bb02dce115",
   "name": "Aurelo Energy Park Manager",
   "publisher": "Allgeier Inovar GmbH",
-  "version": "2.0.0.0",
+  "version": "26.0.0.0",
   "brief": "",
-  "description": "",
+  "description": "The Aurelo Energy Park Manager is a module for the renewable energy industry. It provides a comprehensive solution for managing energy parks, including features for monitoring, reporting, and optimizing energy production and consumption.",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
   "url": "",
-  "logo": "",
+  "logo": "resource/AppSource_Logo_AEM.png",
   "dependencies": [],
   "screenshots": [],
-  "platform": "1.0.0.0",
-  "application": "22.0.0.0",
+  "platform": "26.0.0.0",
+  "application": "26.0.0.0",
+  "runtime": "15.0",
   "idRanges": [
     {
       "from": 55000,
       "to": 55100
     }
   ],
-  "features": [
-    "NoImplicitWith"
-  ],
+  "features": ["NoImplicitWith"],
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": false,
