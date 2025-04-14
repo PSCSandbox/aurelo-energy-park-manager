@@ -1,5 +1,6 @@
 {
   "type": "PTE",
   "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
-  "versioningStrategy": 2
+  "versioningStrategy": 2,
+  "environments": ["QA_PSCHWAMBORN"]
 }
