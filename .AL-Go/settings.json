@@ -3,5 +3,8 @@
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
-  "repoVersion": "2.0"
+  "repoVersion": "2.0",
+  "installApps": [
+    "https://www.fornav.com/products/rep/runtime/bcversion=latest"
+  ]
 }
