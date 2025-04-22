@@ -21,7 +21,9 @@
       "to": 55100
     }
   ],
-  "features": ["NoImplicitWith"],
+  "features": [
+    "NoImplicitWith"
+  ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": true,
