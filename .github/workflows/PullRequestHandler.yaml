@@ -28,7 +28,7 @@ jobs:
     runs-on: windows-latest
     steps:  
       - name: Verify Linked Issue
-        uses: hattan/verify-linked-issue-action@v1.1.5
+        uses: srikanthccv/verify-linked-issue-action@v0.71
         env:
           GITHUB_TOKEN: ${{ github.token }}      
 
