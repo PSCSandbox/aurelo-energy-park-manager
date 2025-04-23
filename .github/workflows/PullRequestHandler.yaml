@@ -16,8 +16,7 @@ permissions:
   actions: read
   contents: read
   id-token: write
-  pull-requests: write
-  statuses: write  
+  pull-requests: read
 
 env:
   workflowDepth: 1
