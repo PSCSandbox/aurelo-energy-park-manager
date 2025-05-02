@@ -5,14 +5,29 @@ codeunit 55000 "Corporation Dimension Mgt."
     var
         AemSetup: Record "AEM Setup";
 
+    procedure BuildUserAssignedDimensionFlowFilter(var currRecord: RecordRef)
+    var
+        globalDimeFieldRef: FieldRef;
+    begin
+        GetGlobalDimension1FilterFieldRef(currRecord, globalDimeFieldRef);
+        BuildUserAssignedFilter(currRecord, globalDimeFieldRef);
+    end;
+
     procedure BuildUserAssignedDimensionFilter(var currRecord: RecordRef)
+    var
+        globalDimeFieldRef: FieldRef;
+    begin
+        GetGlobalDimension1FilterFieldRef(currRecord, globalDimeFieldRef);
+        BuildUserAssignedFilter(currRecord, globalDimeFieldRef);
+    end;
+
+    procedure BuildUserAssignedFilter(var currRecord: RecordRef; var globalDimeFieldRef: FieldRef)
     var
         dimensionValue: Record "Dimension Value";
         generalLedgerSetup: Record "General Ledger Setup";
         applicationUserSettings: Record "Application User Settings";
         energyPark: Record "Corporation";
         energyParkDimensionMgt: Codeunit "Corporation Dimension Mgt.";
-        globalDimensionFieldRef: FieldRef;
         dimensionValueFilter: Text;
         currentFilterGroup: Integer;
     begin
@@ -21,8 +36,6 @@ codeunit 55000 "Corporation Dimension Mgt."
 
         if generalLedgerSetup."Global Dimension 1 Code" <> AemSetup."Corporation Dimension" then
             exit;
-
-        GetShortCutDimension1CodeFieldRef(currRecord, globalDimensionFieldRef);
 
         if applicationUserSettings.Get(UserSecurityId()) then;
 
@@ -36,7 +49,7 @@ codeunit 55000 "Corporation Dimension Mgt."
         if dimensionValueFilter <> '' then begin
             // currentFilterGroup := currRecord.FilterGroup();
             // currRecord.FilterGroup(6);
-            globalDimensionFieldRef.SetFilter(dimensionValueFilter);
+            globalDimeFieldRef.SetFilter(dimensionValueFilter);
             // currRecord.FilterGroup(currentFilterGroup);
         end;
     end;
@@ -69,6 +82,21 @@ codeunit 55000 "Corporation Dimension Mgt."
             exit(false);
 
         globalDimensionFieldRef := currRecord.Field(tableField."No.");
+
+        exit(true);
+    end;
+
+    local procedure GetGlobalDimension1FilterFieldRef(var currRecord: RecordRef; var globalDimensionFilterFieldRef: FieldRef): Boolean
+    var
+        tableField: Record Field;
+    begin
+        tableField.SetRange(TableNo, currRecord.Number());
+        tableField.SetRange(FieldName, 'Global Dimension 1 Filter');
+
+        if not tableField.FindFirst() then
+            exit(false);
+
+        globalDimensionFilterFieldRef := currRecord.Field(tableField."No.");
 
         exit(true);
     end;
